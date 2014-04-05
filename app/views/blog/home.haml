@@ -1,0 +1,12 @@
+%ul.collage-images.img-list
+  -@posts.each do |post|
+    -unless post.image.blank?
+      %li
+        .thumbnail
+          .thumbnail-image
+            =image_tag(post.image, :class=>"img-responsive")
+            %span.text-content   
+              %span
+                =post.title
+                =link_to post.title,url_for("blog/show/#{post.slug}")
+
