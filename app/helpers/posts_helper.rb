@@ -98,5 +98,6 @@ def cycle
   end
   def split_date(date)
     s1 = date.to_s.split(" ").to_a
+    s1[0]
   end
 end

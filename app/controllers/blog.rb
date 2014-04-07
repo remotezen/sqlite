@@ -59,4 +59,8 @@ Blog::App.controllers :blog do
                                                 :per_page=>20).order('id DESC')
      render 'blog/home'
   end
+  get :image, :with=>:id do
+    @image = Post.find_by_slug(params[:id])
+    @image.image
+  end
 end

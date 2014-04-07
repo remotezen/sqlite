@@ -1,17 +1,8 @@
 %ul.search-engine-results
   %li
+    =gravatar_for(@comment.post.account, {:size=>"30x30"})
     ="user name #{@comment.post.account.user_name}"
-  %li
     ="Has been a member for #{time_ago_in_words(@comment.post.account.created_at)}"
-  %li.blog_title_item
     =@comment.comment
-    %br
     .date
       =post_date(@comment)
-    %br  
-%li.gravatar
--unless @comment.account.nil?
-  ="Says: #{ @comment.account.user_name}"
-  =link_to "full details" , url_for(:comments, :show, :id=>@comment.slug)
--else  
-  =gravatar_for_nil :size =>15

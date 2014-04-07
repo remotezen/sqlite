@@ -266,10 +266,10 @@ body {
 .sidebar {
   text-align: left;
   padding: 2em;
-  margin-top: 65%;
+  margin-top: 15em;
   color: #547e44;
   background: #fff;
-  width: 75%;
+  width: 100%;
   border: solid #172112 1px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -438,7 +438,7 @@ span.text-content a {
   font-family: "Tahoma"; }
 
 .home-panel {
-  margin-top: 20%; }
+  margin-top: 25%; }
 
 .show-panel-image {
   margin-top: 5%;
@@ -557,3 +557,18 @@ td.news-feed {
   width: 100%;
   margin-left: auto;
   margin-right: auto; }
+
+.home-image {
+  margin-top: 2em;
+  border: solid 1px #172112;
+  padding: 2em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px; }
+
+.home-image-item {
+  width: 250px;
+  float: left;
+  margin: .5em; }

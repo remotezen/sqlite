@@ -1,12 +1,8 @@
-%ul.collage-images.img-list
-  -@posts.each do |post|
-    -unless post.image.blank?
-      %li
-        .thumbnail
-          .thumbnail-image
-            =image_tag(post.image, :class=>"img-responsive")
-            %span.text-content   
-              %span
-                =post.title
-                =link_to post.title,url_for("blog/show/#{post.slug}")
+.row
+  .col-md-8.home-image
+    -@posts.each do |post|
+      .home-image-item
+        =link_to(image_tag("#{post.image}",size:150), url_for("blog/show/#{post.slug}"),
+        :class => 'fancybox',
+        :rel=>'group1')
 

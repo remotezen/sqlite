@@ -38,11 +38,14 @@ $(document).ready(function(){
   });
 });
 
-$().ready(function() {
-   $('textarea.tinymce').tinymce({
-      script_url : 'js/tinymce/jscripts/tiny_mce/tiny_mce.js',
-      theme : "advanced"
-   });
+
+$(document).ready(function() {
+
+	/* This is basic - uses default settings */
+	
+	$(".fancybox").fancybox()
+
+	
 });
 
 

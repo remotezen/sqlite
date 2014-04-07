@@ -1,6 +1,8 @@
 module Blog
   class App < Padrino::Application
   register WillPaginate::Sinatra
+  require 'dotenv'
+  Dotenv.load
   #register Sinatra::Contrib
   register SassInitializer
   use ActiveRecord::ConnectionAdapters::ConnectionManagement

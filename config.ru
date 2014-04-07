@@ -7,6 +7,8 @@
 require File.expand_path("../config/boot.rb", __FILE__)
 require 'rack/mobile-detect'
 require 'sinatra/reloader'
+require 'dotenv'
+Dotenv.load
 use Rack::MobileDetect
  
 #require these patches from your sinatra/padrino app
