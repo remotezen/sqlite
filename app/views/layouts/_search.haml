@@ -11,10 +11,11 @@
         &nbsp
         &nbsp
         =link_to image_tag('rss.png') , url_for(:blog, :rss)
-      %td  
-        &nbsp
-        = link_to url_for(:logins, :destroy), class: "btn btn-default" do
-          %i.glyphicon.glyphicon-off.light-green
+      -if logged_in?
+        %td  
+          &nbsp
+          = link_to url_for(:logins, :destroy), class: "btn btn-default" do
+            %i.glyphicon.glyphicon-off.light-green
       %td      
         &nbsp
         %a{href: "mailto:hjoannerogers.com"}

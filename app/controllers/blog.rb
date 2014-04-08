@@ -40,7 +40,7 @@ Blog::App.controllers :blog do
     if is_pjax?
       render :layout => false
     end
-    @posts  = Post.find(:all, :limit=> 10, :order=>'id desc')
+    @posts  = Post.find(:all, :limit=> 20, :order=>'id desc')
     post_months = @posts.group_by{|t|t.created_at.beginning_of_month }  
     recipes  = Recipe.find(:all, :limit => 5, :order=> 'id desc')
     post_months = @posts.group_by{|t|t.created_at.beginning_of_month }  
