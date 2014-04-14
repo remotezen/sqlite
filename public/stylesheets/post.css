@@ -94,7 +94,9 @@ body {
 
 .comment-link {
   margin: 8px;
-  text-align: center; }
+  text-align: center;
+  font-size: 1.3em;
+  background: #efe; }
 
 .comment-input {
   text-align: left; }
@@ -265,8 +267,9 @@ body {
 
 .sidebar {
   text-align: left;
+  float: left;
   padding: 2em;
-  margin-top: 15em;
+  margin-top: 25em;
   color: #547e44;
   background: #fff;
   width: 100%;
@@ -408,7 +411,6 @@ span.text-content a {
 .show-panel {
   text-align: center;
   margin-top: 10%;
-  width: 50%;
   padding: 20px;
   background: #fff;
   color: #172112;
@@ -572,3 +574,23 @@ td.news-feed {
   width: 250px;
   float: left;
   margin: .5em; }
+
+.blog-image {
+  margin: .5em;
+  border: solid 1px #172112;
+  padding: 2em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  background: #8cb87a;
+  padding: .5em; }
+
+.image-instructions {
+  font-family: arial;
+  color: #172112;
+  padding: 1em; }
+
+.image-link a {
+  color: #7a8cb8; }

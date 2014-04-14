@@ -1,5 +1,8 @@
 module Blog
   class App < Padrino::Application
+require 'geocoder'
+require "geocoder/railtie"
+Geocoder::Railtie.insert
   register WillPaginate::Sinatra
   #register Sinatra::Contrib
   register SassInitializer
@@ -14,7 +17,17 @@ module Blog
   register Padrino::FormErrors
   #register Blog::Admin
 #  register Padrino::Warden
-  enable :sessions
+   # require 'rack-ssl-enforcer'
+    #use Rack::SslEnforcer
+ enable :sessions 
+=begin
+use Rack::Session::Cookie, :key => '_rack_session',
+                           :path => '/',
+                           :expire_after => 2592000, # In seconds
+                           :secret => settings.session_secret
+=end                           
+require 'dotenv'
+Dotenv.load
 require 'thinking-sphinx'
 ActiveSupport.on_load :active_record do
 include ThinkingSphinx::ActiveRecord
@@ -88,6 +101,7 @@ set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:1
      access_control.roles_for :user do |role|
       role.project_module :comments, '/comments/create'
       role.project_module :comments, '/comments/new'
+      role.project_module :recipes, '/recipes'
 
      end
     access_control.roles_for :admin do |role|

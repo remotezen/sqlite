@@ -16,7 +16,7 @@ class Recipe < ActiveRecord::Base
   validates_presence_of :content
   validates_presence_of :image
 
-  mount_uploader :image, Uploader
+  #mount_uploader :image, Uploader
   
   def to_param
     slug

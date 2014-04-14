@@ -100,4 +100,28 @@ def cycle
     s1 = date.to_s.split(" ").to_a
     s1[0]
   end
+  def geo_hash(geo)
+    hash = { 
+      :lat => geo["latitude"],
+      :long  => geo["longitude"],
+    }
+  end
+  def distance_between(h1,h2)
+    lat1 = h1[:lat]
+    long1= h1[:long] 
+    lat2 = h2[:lat]
+    long2= h2[:long] 
+    long = long1 - long2
+    lat = lat1  - lat2
+    Geocoder::Calculations.distance_between([lat1,long1],[lat2,long2])
+  end
+  def geo(ip)
+    geo_hash(Geocoder.search(ip).first.data)
+  end
+  def geo?
+  end
+  def distance(d1,d2)
+    distance_between(d1,d2)
+  end
+    
 end

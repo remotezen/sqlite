@@ -45,7 +45,7 @@ def make_recipes
     posts = Post.all
     posts.each do |post|
       content = "cup of soup stock, whole apple, one pear, a peach, comma seperated values" 
-      title = "Recipe Title"
+      title = Faker::Lorem.sentence(5) 
       slug = title.gsub(" ","-")
      Recipe.create!( 
       content:content,
@@ -62,7 +62,7 @@ def make_recipes
 end
 def make_toppings
   ingredients = "1 Tsp vinegar, 1 tsp tamari, 1cup of flour, handful of gogi berries"
-  title = "Title for Topping"
+  title = Faker::Lorem.sentence(7) 
   description = "This is the way that you make your topping"
   recipes = Recipe.all
   recipes.each do |item|
@@ -81,7 +81,7 @@ def make_steps
   description = Faker::Lorem.sentence(30)
   recipes.each do |r|
     5.times do
-      title = "step-#" 
+      title = Faker::Lorem.sentence(5) 
       Step.create!(
         title: title,
         description: description,
@@ -97,7 +97,7 @@ end
 def make_posts
   user_name = "bear"
   account  = Account.where("user_name=?",user_name)
-  image = "asparagus.png"
+  image = "bork.jpg"
   
   50.times do
     title = Faker::Lorem.sentence(6)

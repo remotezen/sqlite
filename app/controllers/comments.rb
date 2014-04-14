@@ -17,8 +17,8 @@ Blog::App.controllers :comments do
       render :layout => false
     end
     if logged_in?
-    @comment = Comment.new
-    render  'comments/new', :layout => !is_pjax?
+      @comment = Comment.new
+      render  'comments/new', :layout => !is_pjax?
     else
       redirect_to url_for(:logins,:new) 
     end

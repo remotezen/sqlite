@@ -41,6 +41,10 @@ Blog::App.controllers :blog do
       render :layout => false
     end
     @posts  = Post.find(:all, :limit=> 20, :order=>'id desc')
+   #dotenv values 
+    h1 = geo_hash(Geocoder.search(ENV["HOME_IP"]).first.data)
+    h2 = geo_hash(Geocoder.search(ENV["HOME_IP"]).first.data)
+    @home = distance_between(h1,h2)
     post_months = @posts.group_by{|t|t.created_at.beginning_of_month }  
     recipes  = Recipe.find(:all, :limit => 5, :order=> 'id desc')
     post_months = @posts.group_by{|t|t.created_at.beginning_of_month }  

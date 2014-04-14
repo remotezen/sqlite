@@ -22,33 +22,36 @@
       url_for(:comments,:archive,
       :id =>split_date(months), :month=> archive(months))
     %br  
-.sidebar
-  %ul  
-    %li.sidebar-header
-      %h3
-        .glyphicon.glyphicon-calendar Archives
+.container    
+  .row
+    .col-md-3.offset
+      .sidebar
+        %ul  
+          %li.sidebar-header
+            %h3
+              .glyphicon.glyphicon-calendar Archives
 
-    %li.sidebar-sub
-      Posts
-      -if content_for?(:blog_time_line)
-        %li.sidebar-content
-          =yield_content  :blog_time_line
-      -else  
-        %li.sidebar-content
-          No Posts
-    %li.sidebar-sub      
-      Recipes 
+          %li.sidebar-sub
+            Posts
+            -if content_for?(:blog_time_line)
+              %li.sidebar-content
+                =yield_content  :blog_time_line
+            -else  
+              %li.sidebar-content
+                No Posts
+          %li.sidebar-sub      
+            Recipes 
 
-    %li.sidebar-content      
-      -if content_for?(:recipe_time_line)
-        =yield_content  :recipe_time_line
-      -else  
-        No Recipes
-    %li.sidebar-sub      
-      Comments 
-    %li.sidebar-content     
-      -if content_for?(:comment_time_line)
-        =yield_content  :comment_time_line
-      -else  
-        No Recipes 
+          %li.sidebar-content      
+            -if content_for?(:recipe_time_line)
+              =yield_content  :recipe_time_line
+            -else  
+              No Recipes
+          %li.sidebar-sub      
+            Comments 
+          %li.sidebar-content     
+            -if content_for?(:comment_time_line)
+              =yield_content  :comment_time_line
+            -else  
+              No Recipes 
 

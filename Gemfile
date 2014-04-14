@@ -40,6 +40,8 @@ gem 'kgio'
 gem 'dalli'
 gem 'fistface'
 gem 'padrino-cookies'
+gem 'rack-ssl-enforcer'
+gem 'geocoder'
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
 

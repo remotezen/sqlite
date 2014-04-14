@@ -1,3 +1,6 @@
+-h1 = geo(ENV["HOME_IP"]) unless nil
+-h2 = geo(ENV["HOME_IP"]) unless nil
+-@home = distance(h1,h2)
 -button_to 'search',url(:search,:create), 
   :class => 'form-search search' do 
   %table
@@ -20,5 +23,10 @@
         &nbsp
         %a{href: "mailto:hjoannerogers.com"}
           %i.glyphicon.glyphicon-envelope.mail-color
+      -if @home < 20      
+        %td      
+          &nbsp
+          %a{href:url_for(:services,:show)}
+            %i.glyphicon.glyphicon-glass.mail-color
 
       

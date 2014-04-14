@@ -28,6 +28,7 @@ GEM
     ffaker (1.23.0)
     fistface (1.0.2)
       sinatra (~> 1.1)
+    geocoder (1.1.9)
     haml (4.0.5)
       tilt
     http_router (0.11.1)
@@ -103,6 +104,7 @@ GEM
       rack
     rack-protection (1.5.2)
       rack
+    rack-ssl-enforcer (0.2.6)
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.1.1)
@@ -170,6 +172,7 @@ DEPENDENCIES
   dotenv
   ffaker
   fistface
+  geocoder
   haml
   kgio
   mini_magick
@@ -185,6 +188,7 @@ DEPENDENCIES
   pry-theme
   puma
   rack-mobile-detect
+  rack-ssl-enforcer
   rack-test
   rake
   ripl-rack (~> 0.2.1)

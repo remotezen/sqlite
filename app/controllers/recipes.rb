@@ -3,6 +3,15 @@ Blog::App.controllers :recipes do
     @recipe = Recipe.find_by_slug(params[:id])
     render 'recipes/show'
   end
+  get :index do
+    if logged_in?
+    @title = "All your recipes"
+    @recipes = Recipe.all
+    render 'recipes/index' 
+    else
+      render url_for(:logins,:new)
+    end
+  end
   get :archive, :with => [:id, :month] do
     @id = params[:id]
     @month = params[:month]

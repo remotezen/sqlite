@@ -96,9 +96,10 @@
 }
 .recipe-table{ 
   background:#fff;
-  border:dashed 1px $text-color;
+  border:solid 1px $text-color;
   @include border-radius(8px);
   padding:1.2em 1.2em;
+  text-align:center;
 }
 .step-image{ 
   border: solid $text-color 1px;

@@ -18,7 +18,6 @@ class Account < ActiveRecord::Base
   validates_length_of       :user_name,   :within => 3..25
   validates_uniqueness_of   :user_name, :case_sensitive => false
   validates_uniqueness_of   :name, :case_sensitive => false
-  validates_uniqueness_of   :surname, :case_sensitive => false
 
 
   # Callbacks

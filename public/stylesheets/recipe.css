@@ -128,13 +128,14 @@ a {
 
 .recipe-table {
   background: #fff;
-  border: dashed 1px #172112;
+  border: solid 1px #172112;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
-  padding: 1.2em 1.2em; }
+  padding: 1.2em 1.2em;
+  text-align: center; }
 
 .step-image {
   border: solid #172112 1px;
