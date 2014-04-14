@@ -5,8 +5,8 @@ gem 'rake'
 # Component requirements
 gem 'haml'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
-gem 'mysql2'
 gem 'padrino-form-errors'
+gem 'sqlite3'
 # Test requirements
 gem 'shoulda', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
