@@ -2,7 +2,7 @@ module Blog
   class App < Padrino::Application
 require 'geocoder'
 require "geocoder/railtie"
-Geocoder::Railtie.insert
+  Geocoder::Railtie.insert
   register WillPaginate::Sinatra
   #register Sinatra::Contrib
   register SassInitializer
@@ -15,6 +15,7 @@ Geocoder::Railtie.insert
   register Padrino::Flash
   register Padrino::Cookies
   register Padrino::FormErrors
+  require 'will_paginate/array'
   #register Blog::Admin
 #  register Padrino::Warden
    # require 'rack-ssl-enforcer'
@@ -28,10 +29,13 @@ use Rack::Session::Cookie, :key => '_rack_session',
 =end                           
 require 'dotenv'
 Dotenv.load
+=begin
 require 'thinking-sphinx'
 ActiveSupport.on_load :active_record do
 include ThinkingSphinx::ActiveRecord
 end
+=end
+require 'will_paginate'
 require 'dalli'
 set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1,:expires_in=>0))
 #dc.set('abc', 123)

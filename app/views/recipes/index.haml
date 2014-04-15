@@ -13,3 +13,4 @@
               url_for(:recipes,:show,:id=>recipe.slug)
             %td.list-column=recipe.content
             %td.list-column=recipe.course
+    =will_paginate @recipes       

@@ -10,11 +10,15 @@ class Post < ActiveRecord::Base
   validates_presence_of :body
   before_save  :make_slug
  # mount_uploader :image, Uploader
-  
+  scope :for_year,  lambda {|year| where('STRFTIME("%Y",created_at) = ?',year)}
+  scope :for_month,  lambda {|month| where('STRFTIME("%m",created_at) = ?',month)}
   def to_param
     slug
   end
-  
+  def make_month(t)
+    self.for_month
+
+  end
   def slug
     title.gsub(" ","-")
   end

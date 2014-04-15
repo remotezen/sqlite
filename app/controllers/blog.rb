@@ -45,9 +45,12 @@ Blog::App.controllers :blog do
     h1 = geo_hash(Geocoder.search(ENV["HOME_IP"]).first.data)
     h2 = geo_hash(Geocoder.search(ENV["HOME_IP"]).first.data)
     @home = distance_between(h1,h2)
-    post_months = @posts.group_by{|t|t.created_at.beginning_of_month }  
+    #post_months = @posts.group_by{|t|t.created_at.beginning_of_month }  
+    #month = Date.strftime('%m','created_at')
+=begin    #
     recipes  = Recipe.find(:all, :limit => 5, :order=> 'id desc')
-    post_months = @posts.group_by{|t|t.created_at.beginning_of_month }  
+    post_months = @posts.group_by{|t|t.created_at.beginning_of_month 
+    }  
     recipe_months = recipes.group_by{|t|t.created_at.beginning_of_month }  
     comments = Comment.find(:all,  :order=> 'id desc')
     comment_months = comments.group_by{|t|t.created_at.beginning_of_month}  
@@ -55,6 +58,7 @@ Blog::App.controllers :blog do
     Blog::App.cache.set('recipe_months',recipe_months)
     Blog::App.cache.set('comment_months',comment_months)
     Blog::App.cache.set('comments',comments)
+=end    
      @post = Post.last
      #@date = @post.created_at.to_s.split('-').to_a
      #@day = @date[2].split(' ')

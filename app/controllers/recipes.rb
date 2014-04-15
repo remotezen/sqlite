@@ -6,7 +6,7 @@ Blog::App.controllers :recipes do
   get :index do
     if logged_in?
     @title = "All your recipes"
-    @recipes = Recipe.all
+    @recipes = Recipe.order('created_at DESC').page(params[:page]).per_page(10)
     render 'recipes/index' 
     else
       render url_for(:logins,:new)

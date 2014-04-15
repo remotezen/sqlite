@@ -1,58 +1,22 @@
-##
-# You can use other adapters like:
-#
-#   ActiveRecord::Base.configurations[:development] = {
-#     :adapter   => 'mysql2',
-#     :encoding  => 'utf8',
-#     :reconnect => true,
-#     :database  => 'your_database',
-#     :pool      => 5,
-#     :username  => 'root',
-#     :password  => '',
-#     :host      => '127.0.0.1',
-#     :socket    => '/tmp/mysql.sock'
-#   }
+# Setup our logger
 #
 ActiveRecord::Base.configurations[:development] = {
-  :adapter   => 'mysql2',
-  :encoding  => 'utf8',
-  :reconnect => true,
-  :database  => 'blog_development',
-  :pool      => 5,
-  :username  => 'root',
-  :password  => 'duH21Fre',
-  :host      => '127.0.0.1',
-  :socket    => '/tmp/mysql.sock'
+  :adapter => 'sqlite3',
+  :database => Padrino.root('db', 'development.db')
 
 }
 
 ActiveRecord::Base.configurations[:production] = {
-  :adapter   => 'mysql2',
-  :encoding  => 'utf8',
-  :reconnect => true,
-  :database  => 'blog_production',
-  :pool      => 5,
-  :username  => 'root',
-  :password  => 'duH21Fre',
-  :host      => '127.0.0.1',
-  :socket    => '/tmp/mysql.sock'
+  :adapter => 'sqlite3',
+  :database => Padrino.root('db', 'production.db')
 
 }
 
 ActiveRecord::Base.configurations[:test] = {
-  :adapter   => 'mysql2',
-  :encoding  => 'utf8',
-  :reconnect => true,
-  :database  => 'blog_test',
-  :pool      => 5,
-  :username  => 'root',
-  :password  => 'duH21Fre',
-  :host      => '127.0.0.1',
-  :socket    => '/tmp/mysql.sock'
+  :adapter => 'sqlite3',
+  :database => Padrino.root('db', 'test.db')
 
 }
-
-# Setup our logger
 ActiveRecord::Base.logger = logger
 
 # Raise exception on mass assignment protection for Active Record models.

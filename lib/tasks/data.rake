@@ -99,7 +99,7 @@ def make_posts
   account  = Account.where("user_name=?",user_name)
   image = "bork.jpg"
   
-  50.times do
+  20.times do
     title = Faker::Lorem.sentence(6)
     body = Faker::Lorem.sentence(500)
     Post.create!(
@@ -113,7 +113,7 @@ end
 
 def make_comments
   posts = Post.all
-  50.times do
+  10.times do
     c = Faker::Lorem.sentence(5)
     posts.each{ |p| Comment.create!(comment:c,
                                     post_id:p.id)}

@@ -7,7 +7,7 @@ class Recipe < ActiveRecord::Base
   has_many :toppings, :dependent => :destroy
   belongs_to :post
   before_save :make_slug
-  validates_presence_of :title, :uniqueness => true
+  #validates_presence_of :title, :uniqueness => true
   validates_presence_of :course
   validates_presence_of :prep_time
   validates_presence_of :cooking_time

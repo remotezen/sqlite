@@ -118,7 +118,8 @@ def cycle
   def geo(ip)
     geo_hash(Geocoder.search(ip).first.data)
   end
-  def geo?
+  def geo(ip)?
+    Geocoder.search(ip).first.data.nil?
   end
   def distance(d1,d2)
     distance_between(d1,d2)

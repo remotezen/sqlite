@@ -6,9 +6,9 @@ module Blog
     register Padrino::Helpers
     register Padrino::Admin::AccessControl
 
-  require 'thinking-sphinx'
+  #require 'thinking-sphinx'
   ActiveSupport.on_load :active_record do
-  include ThinkingSphinx::ActiveRecord
+  #include ThinkingSphinx::ActiveRecord
   end
     
 
